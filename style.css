@@ -1,0 +1,159 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-size: 12px;
+    line-height: 1.2;
+    background-color: #fff;
+    position: relative;
+}
+
+main {
+    height: calc(100vh - 50px);
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    /* ios5+ 弹性滚动 */
+}
+
+main>section {
+    display: none;
+}
+
+main>section:first-child {
+    display: block;
+}
+
+.item {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.item>a {
+    display: block;
+    display: flex;
+}
+
+.item .cover,
+.item .cover img {
+    width: 70px;
+}
+
+.item .detail {
+    flex: 1;
+    padding-left: 10px;
+}
+
+.item .detail h2 {
+    font-size: 16px;
+}
+
+.item .detail .extra {
+    color: #999;
+    margin-top: 4px;
+}
+
+.item .detail .score {
+    color: #ff5722;
+}
+
+.loading {
+    padding: 5px;
+    text-align: center;
+    display: none;
+}
+
+.loading .iconfont {
+    display: inline-block;
+    animation: 1s rotate linear infinite;
+
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.search-area{
+    margin: 20px;
+    outline: none;
+}
+.search-area>input{
+    padding: 7px;
+    width:50%;
+    border-radius: 4px;
+    padding-left: 4px;
+    text-align: left;
+    outline: none;
+   
+}
+input:focus{
+ border:1px solid #F9760B;
+}
+
+.button{
+    
+    border-radius: 4px;
+    padding: 6px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background: -webkit-linear-gradient(top, #FDA251, #FB8F3D);
+    background: -moz-linear-gradient(top, #FDA251, #FB8F3D);
+    background: -ms-linear-gradient(top, #FDA251, #FB8F3D);
+}
+.button:hover {
+border: 1px solid #EB5200;
+background: -webkit-linear-gradient(top, #FD924C, #F9760B); 
+background: -moz-linear-gradient(top, #FD924C, #F9760B); 
+background: -ms-linear-gradient(top, #FD924C, #F9760B); 
+box-shadow: 0 1px #EFEFEF;
+}
+
+.button:active {
+box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+}
+
+footer {
+    position: absolute;
+    border-top: 1px solid #ccc;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    display: flex;
+}
+
+footer>div {
+    flex: 1;
+    text-align: center;
+}
+
+footer .active {
+    color: #ff5722;
+}
+
+footer>div>span {
+    display: block;
+    padding: 3px;
+}
+
+
