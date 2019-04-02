@@ -43,6 +43,8 @@ var Helper = {
     }
 
 }
+
+
 var Top250Page = {
     init: function() {
         this.$container = $('#top250')
