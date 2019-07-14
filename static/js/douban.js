@@ -44,7 +44,6 @@ var Helper = {
 
 }
 
-
 var Top250Page = {
     init: function() {
         this.$container = $('#top250')
@@ -72,6 +71,20 @@ var Top250Page = {
             }
         })
     },
+    ajax: function(callback) {
+        var _this = this
+        setTimeout(function() {
+            var ret = mockData.data
+            _this.index += 20
+            if (_this.index >= ret.total) {
+                _this.isFinish = true
+            }
+            // 渲染数据
+            callback && callback(ret)
+            _this.isLoading = false
+            _this.$container.find('.loading').hide()
+        }, 50)
+    },
     start: function() {
         var _this = this
         this.getData(function(data) {
@@ -79,6 +92,13 @@ var Top250Page = {
         })
     },
     getData: function(callback) {
+        var _this = this
+        if (_this.isLoading) return;
+        _this.isLoading = true
+        _this.$container.find('.loading').show()
+        _this.ajax(callback)
+    },
+    getData2: function(callback) {
         var _this = this
         if (_this.isLoading) return;
         _this.isLoading = true
@@ -106,11 +126,35 @@ var Top250Page = {
     },
     render: function(data) {
         var _this = this
-        data.subjects.forEach(function(movie) {
+            // data.subjects.forEach(function(movie) {
+        data.list.forEach(function(movie) {
             _this.$content.append(Helper.createNode(movie))
         })
+    },
+    view: function() {
+        var html = ''
+        html += '<div class="item">' +
+            '<a href="#">' +
+            '<div class="cover">' <
+            img src = ""
+        alt = "" >
+            <
+            /div> <
+        div class = "detail" >
+            <
+            h2 > < /h2> <
+        div class = "extra" > < span class = "score" > < /span>分 / < span class = "collect" > < /span>收藏</div >
+            <
+            div class = "extra" > < span class = "year" > < /span> / < span class = "type" > < /span></div >
+            <
+            div class = "extra" > 导演： < span class = "director" > < /span></div >
+            <
+            div class = "extra" > 主演： < span class = "actor" > < /span></div >
+            <
+            /div> < /
+            a > <
+            /div>
     }
-
 }
 
 
